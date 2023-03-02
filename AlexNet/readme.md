@@ -8,7 +8,7 @@ with Deep Convolutional Neural Networks" by Alex Krizhevsky, Ilya Sutskever, Geo
 	1. 5 conv2d + 3 fc + softmax  --> 60 million parameters and 650,000 neurons. 
 2. some technologies 
     1. Overlap pooling - reduce overfit 
-    2. drop out  - to reduce overfit 
+    2. drop out  - to reduce overfit  
     3. Training on Multiple GPU 
     4. use ReLU activation function - not sigmoid activation function  - learning faster than tanh function 
     5. Data Augmentation   - enlarge dataset to reduce overfit 
