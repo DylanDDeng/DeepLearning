@@ -13,9 +13,9 @@ Try to build the VGG model from two parts.
 - Fully Connected Layers and softmax
 """
 class VGG(nn.Module):
-    def __init__(self, num_class: int = 1000, init_weights: bool=False, make_features: nn.Module):
+    def __init__(self, features: nn.Module, num_class: int = 1000, init_weights: bool=False):
         super(VGG, self).__init__()
-        self.features = make_features
+        self.features = features
         self.classifier = nn.Sequential(
             nn.Linear(512*7*7, 4096),
             nn.ReLU(True),
