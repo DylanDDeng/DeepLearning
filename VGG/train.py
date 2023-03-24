@@ -6,7 +6,6 @@
 import os.path
 import math
 import argparse
-
 import torch.optim as optim
 from torch.utils.tensorboard import SummaryWriter
 from torchvision import transforms
