@@ -7,12 +7,10 @@ import os.path
 import math
 import argparse
 
-import torch
 import torch.optim as optim
 from torch.utils.tensorboard import SummaryWriter
 from torchvision import transforms
 import torch.optim.lr_scheduler as lr_scheduler
-import torch.nn as nn
 from utils import *
 from my_dataset import *
 from model import *
