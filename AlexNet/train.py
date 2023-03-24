@@ -104,7 +104,7 @@ def main(args):
 
     for epoch in range(args.epochs):
         # train
-        mean_loss = train_one_epoch(model=model,
+        train_loss, train_acc = train_one_epoch(model=model,
                                     optimizer=optimizer,
                                     data_loader=train_loader,
                                     device=device,
@@ -112,20 +112,22 @@ def main(args):
         scheduler.step()
 
         # validate
-        acc = evaluate(model=model,
+        val_loss, val_acc = evaluate(model=model,
                        data_loader=val_loader,
-                       device=device)
+                       device=device,
+                       epoch=epoch)
 
-        print("[epoch{}] accuracy:{}".format(epoch, round(acc, 3)))
-        tags = ['loss', 'accuracy', 'learning_rate']
-        tb_writer.add_scalar(tags[0], mean_loss, epoch)
-        tb_writer.add_scalar(tags[1], acc, epoch)
-        tb_writer.add_scalar(tags[2], optimizer.param_groups[0]['lr'], epoch)
+        tags = ["train_loss", "train_acc", "val_loss", "val_acc", "learning_rate"]
+        tb_writer.add_scalar(tags[0], train_loss, epoch)
+        tb_writer.add_scalar(tags[1], train_acc, epoch)
+        tb_writer.add_scalar(tags[2], val_loss, epoch)
+        tb_writer.add_scalar(tags[3], val_acc, epoch)
+        tb_writer.add_scalar(tags[4], optimizer.param_groups[0]["lr"], epoch)
 
         torch.save(model.state_dict(), './weights/model-{}.pth'.format(epoch))
 
 
-if __name__=='__main__':
+if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--num_classes', type=int, default=5)
     parser.add_argument('--epochs', type=int, default=3)
