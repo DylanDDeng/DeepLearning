@@ -40,4 +40,11 @@ VGG是由牛津大学的视觉几何组(Visual Geometry Group)于2015年提出�
 本文的一个重要的思想是提出用多个3x3的卷积核替代原先单个的大卷积核。在拥有相同感受野的情况下，3个3x3的卷积核计算参数会比1个7x7的卷积核
 所带来的计算参数少。例如：
 3个3x3的卷积核，假设输入输出通道数都是C，那么计算参数为3x(3x3xCxC) = 27C^2 </br> 
-1个7x7的卷积核，假设输入输出通道数都是C，那么计算参数为7x7xCxC = 49C^2 
+1个7x7的卷积核，假设输入输出通道数都是C，那么计算参数为7x7xCxC = 49C^2  
+
+## References  
+参考了以下代码
+
+[URL1](https://github.com/WZMIAOMIAO/deep-learning-for-image-processing/blob/master/pytorch_classification/Test3_vggnet/model.py) 
+
+[URL2](https://github.com/pytorch/vision/blob/main/torchvision/models/vgg.py)
