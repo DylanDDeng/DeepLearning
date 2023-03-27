@@ -31,7 +31,7 @@ class VGG(nn.Module):
     def forward(self, x):
         x = self.features(x)
         x = torch.flatten(x, start_dim=1)
-        x =  self.classifier(x)
+        x = self.classifier(x)
         return x
 
     def _initialize_weights(self):

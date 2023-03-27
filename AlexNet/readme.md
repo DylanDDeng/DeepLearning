@@ -23,7 +23,7 @@ with Deep Convolutional Neural Networks" by Alex Krizhevsky, Ilya Sutskever, Geo
 ```my_dataset.py``` is the script to define the dataset to load 
 
 
-### Reference 
+### References
 I refer the following link about the code. 
 [URL](https://github.com/WZMIAOMIAO/deep-learning-for-image-processing/tree/master/pytorch_classification/Test2_alexnet)
 
