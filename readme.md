@@ -17,5 +17,5 @@
 ##  所需环境 
 * Anaconda 3 
 * Python 3.6/ 3.7/ 3.8 
-* pytorch 1.10  
+* pytorch 1.10   
 
