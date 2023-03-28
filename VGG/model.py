@@ -63,7 +63,7 @@ def make_features(cfg: List[Union[str, int]], batch_norm=False) -> nn.Sequential
     in_channels = 3
 
     for v in cfg:
-        if v =="M":
+        if v == "M":
             layers += [nn.MaxPool2d(kernel_size=2, stride=2)]
         else:
             conv2d = nn.Conv2d(in_channels=in_channels, out_channels=v, kernel_size=3, stride=1, padding=1)
