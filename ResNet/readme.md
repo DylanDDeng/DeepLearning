@@ -48,6 +48,7 @@ ResNet 是由微软亚洲实验室于2015年提出的。作者是Kaiming He, Xia
 
 ## References 
 [参考博客](https://blog.csdn.net/qq_37541097/article/details/104710784?spm=1001.2014.3001.5502) 
+
 [参考实现代码](https://github.com/WZMIAOMIAO/deep-learning-for-image-processing/tree/master/pytorch_classification/Test5_resnet)
 
 
