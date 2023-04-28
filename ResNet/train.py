@@ -89,7 +89,6 @@ def main(args):
     optimizer = optim.Adam(params=pg, lr=args.lr)
 
     # scheduler
-    # scheduler
     lf = lambda x: ((1 + math.cos(x * math.pi / args.epochs)) / 2) * (1 - args.lrf) + args.lrf  # cosine
     scheduler = lr_scheduler.LambdaLR(optimizer, lr_lambda=lf)
 
