@@ -3,6 +3,10 @@
 # @Author: Dylan 
 # @File: train.py 
 # @software: PyCharm
+
+"""
+convNext 训练脚本
+"""
 import os.path
 import math
 import argparse

@@ -7,6 +7,9 @@
 from PIL import Image
 import torch
 from torch.utils.data import Dataset
+"""
+convNext 自定义数据集
+"""
 
 class MyDataset(Dataset):
     """自定义数据集"""
