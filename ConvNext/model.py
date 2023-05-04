@@ -6,6 +6,7 @@
 """
 original code from facebook research
 https://github.com/facebookresearch/ConvNeXt
+convNext 模型搭建脚本
 """
 import torch
 import torch.nn as nn
