@@ -4,6 +4,6 @@
 ```
 The outcome of this exploration is a family of pure ConvNet models dubbed ConvNeXt. Constructed entirely 
 from standard ConvNet modules, ConvNeXts compete favorably with Transformers in terms of accuracy and scalability, 
-achieving 87.8% ImageNet top-1 accuracy and outperforming Swin Transformers on COCO detection and ADE20K segmentation, while maintaining the simplicity 
-and efficiency of standard ConvNets.
+achieving 87.8% ImageNet top-1 accuracy and outperforming Swin Transformers on COCO detection and ADE20K segmentation, 
+while maintaining the simplicity and efficiency of standard ConvNets.
 ```
