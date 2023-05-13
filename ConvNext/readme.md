@@ -1,13 +1,21 @@
 # ConvNeXt 
 
-[前言](https://github.com/DylanDDeng/DeepLearning/tree/main/ConvNext#前言)
+[前言](https://github.com/DylanDDeng/DeepLearning/tree/main/ConvNext#前言) 
+
 [设计方案](https://github.com/DylanDDeng/DeepLearning/tree/main/ConvNext#设计方案)
+
 [Marco Design](https://github.com/DylanDDeng/DeepLearning/tree/main/ConvNext#Marco Design)
+
 [ResNext-ify](https://github.com/DylanDDeng/DeepLearning/tree/main/ConvNext#ResNext-ify)
+
 [Inverted Bottleneck](https://github.com/DylanDDeng/DeepLearning/tree/main/ConvNext#Inverted Bottleneck)
+
 [Large Kernel Sizes](https://github.com/DylanDDeng/DeepLearning/tree/main/ConvNext#Large Kernel Sizes) 
+
 [Micro Design](https://github.com/DylanDDeng/DeepLearning/tree/main/ConvNext#Micro Design)
+
 [ConvNext配置](https://github.com/DylanDDeng/DeepLearning/tree/main/ConvNext#ConvNext配置)
+
 [ConvNext结构图](https://github.com/DylanDDeng/DeepLearning/tree/main/ConvNext#ConvNext结构图)
 ## 前言
 作者在这篇论文中指出随着Vision Transformer(*ViTs*)的提出，cv领域里的很多模型都是基于Transformer，而不再是以往的卷积神经网络(*ConvNet*)。但作者觉得ConvNet仍然有设计改进的空间，
