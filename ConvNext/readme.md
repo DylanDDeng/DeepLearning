@@ -4,15 +4,15 @@
 
 [设计方案](https://github.com/DylanDDeng/DeepLearning/tree/main/ConvNext#设计方案)
 
-[Marco Design](https://github.com/DylanDDeng/DeepLearning/tree/main/ConvNext#Marco Design)
+[MarcoDesign](https://github.com/DylanDDeng/DeepLearning/tree/main/ConvNext#MarcoDesign)
 
 [ResNext-ify](https://github.com/DylanDDeng/DeepLearning/tree/main/ConvNext#ResNext-ify)
 
-[Inverted Bottleneck](https://github.com/DylanDDeng/DeepLearning/tree/main/ConvNext#Inverted Bottleneck)
+[InvertedBottleneck](https://github.com/DylanDDeng/DeepLearning/tree/main/ConvNext#InvertedBottleneck)
 
-[Large Kernel Sizes](https://github.com/DylanDDeng/DeepLearning/tree/main/ConvNext#Large Kernel Sizes) 
+[LargeKernelSizes](https://github.com/DylanDDeng/DeepLearning/tree/main/ConvNext#LargeKernelSizes) 
 
-[Micro Design](https://github.com/DylanDDeng/DeepLearning/tree/main/ConvNext#Micro Design)
+[MicroDesign](https://github.com/DylanDDeng/DeepLearning/tree/main/ConvNext#MicroDesign)
 
 [ConvNext配置](https://github.com/DylanDDeng/DeepLearning/tree/main/ConvNext#ConvNext配置)
 
@@ -58,13 +58,13 @@ In this part, we attempt to adopt the idea of ResNeXt [87], which has a better F
 ``` 
 ResNext中采用了group convolution，大大减少了Flops。作者在这里采用了更激进的depthwise convolution,是group convolution的一种特殊形式，即group数量和channel数量相同。Depthwise convolution在MobileNet和Xception中被推广。作者这么做的原因是觉得depthwise convolution和self-attention中的加权求和操作很类似。作者同样也把通道数从64调整到96，和Swin Transformer一样。这样将准确率提高到了80.5%。 但是同样Flops也增加到了5.3G。 
 
-## Inverted Bottleneck 
+## InvertedBottleneck 
 作者认为Transformer中的MLP模块与MobileNet V2中的Inverted Bottleneck非常相似，都是两头细中间粗，如下图所示：
 ![img_1.png](img_1.png) 
 
 通过这一步操作，不仅将准确率提高到80.6%，还降低了之前升高的Flops，降低为4.6滚。
 
-## Large Kernel Sizes 
+## LargeKernelSizes 
 作者在这里探索了更大的卷积核尺寸。在Transformer中一般都都是对全局做self-attention操作，比如ViTs；即使是Swin Transformer中，也有7x7的窗口。但因为VGG模型中发现，使用3x3能替代一个更大的窗口，并且现在的GPU对3x3卷积核进行了更多的优化，所以主流的ConvNets都是采用的3x3卷积核大小，但作者在这里进行了如下两个优化：
 * ** Moving up depthwise conv layer **  
 	即将depthwise conv layer的位置上移，原先的结构是 ```1x1 conv``` -> ```depthwise conv``` -> ```1x1 conv``` 改成 ```depth wise conv``` -> ```1x1 conv``` -> ```1x1 conv```
@@ -72,7 +72,7 @@ ResNext中采用了group convolution，大大减少了Flops。作者在这里采
 * ** Increasing the kernel size **  
 	作者在这里采用了 7x7卷积核尺寸替代3x3，将准确率提升到80.6%。当然作者也试了别的尺寸，如3，5，7，9但是表现都和7x7差不多，所以这里采用的卷积核尺寸为7x7。
 
-## Micro Design 
+## MicroDesign 
 作者在这里更注重细节上的设计 比如激活函数的选择，以及normalization层。
 * ** Replacing ReLu with GELU** 
 	作者认为NLP领域和CV领域主要的差异其中一点就是对于激活函数的选择，在Transformer中，是选择GELU作为激活函数，但是在ConvNets中是选择ReLU作为激活函数。但是作者觉得同样可以选择GELU激活函数在ConvNet中，尽管这么做之后准确率没有任何变化，仍然是80.6%。 
