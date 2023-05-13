@@ -8,7 +8,9 @@
 - model.py
     用pytorch对网络进行实现 
 - train.py
-    网络训练脚本
+    网络训练脚本 
+- imgxx.png
+    示意图
 ```    
 
 ## 代码参考 
