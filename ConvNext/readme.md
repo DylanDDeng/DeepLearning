@@ -18,6 +18,7 @@
 
 [ConvNext结构图](https://github.com/DylanDDeng/DeepLearning/tree/main/ConvNext#ConvNext结构图)
 
+[References](https://github.com/DylanDDeng/DeepLearning/tree/main/ConvNext#References)
 
 -----------------------------------------------------
 
@@ -93,3 +94,9 @@ ResNext中采用了group convolution，大大减少了Flops。作者在这里采
 
 ## ConvNeXt结构图  
 ![img_4.png](img_4.png)
+
+## References 
+[参考博客](https://blog.csdn.net/qq_37541097/article/details/122556545) 
+
+[参考实现代码](https://github.com/WZMIAOMIAO/deep-learning-for-image-processing/tree/master/pytorch_classification/ConvNeXt)
+
