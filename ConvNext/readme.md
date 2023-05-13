@@ -46,7 +46,7 @@ This will be our baseline. We then study a series of design decisions which we s
 下图讲述了每个实验过程对最终结果的影响，可以看到最终结果已经超过了```Swin Transformer```,接下来对每个实验步骤进行解析。 
 ![img.png](img.png)
 
-## Marco Design 
+## MarcoDesign 
 在这一部分，作者主要提出了两个需要在设计网络的时候考虑的点：
 * **Changing stage compute ratio** 
 	在最初ResNet-50网络中每个stage的数量为[3,4,6,3],每个stage的比例大概为1：1：2：1，但在Swin Transformer中，比如Swin-T的比例是1：1：3：1，所以作者根据这个比例也调整了stage3在ResNet-50中的占比，改成了[3,3,9,3],调整后，准确率升高到79.4%。 
@@ -91,5 +91,5 @@ ResNext中采用了group convolution，大大减少了Flops。作者在这里采
 
 ![img_2.png](img_2.png)
 
-## ConvNeXt 结构图  
+## ConvNeXt结构图  
 ![img_4.png](img_4.png)
