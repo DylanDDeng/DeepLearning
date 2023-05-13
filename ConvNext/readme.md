@@ -17,6 +17,10 @@
 [ConvNext配置](https://github.com/DylanDDeng/DeepLearning/tree/main/ConvNext#ConvNext配置)
 
 [ConvNext结构图](https://github.com/DylanDDeng/DeepLearning/tree/main/ConvNext#ConvNext结构图)
+
+
+---------------------------------------------------
+
 ## 前言
 作者在这篇论文中指出随着Vision Transformer(*ViTs*)的提出，cv领域里的很多模型都是基于Transformer，而不再是以往的卷积神经网络(*ConvNet*)。但作者觉得ConvNet仍然有设计改进的空间，
 所以在这篇论文中又提出了ConvNeXt网络，完全是基于ConvNet模式，来对标Transformer，并且取得了不错的效果。 以下是其中一段原文：
@@ -26,8 +30,6 @@ from standard ConvNet modules, ConvNeXts compete favorably with Transformers in 
 achieving 87.8% ImageNet top-1 accuracy and outperforming Swin Transformers on COCO detection and ADE20K segmentation, 
 while maintaining the simplicity and efficiency of standard ConvNets.
 ```
-
------------------------------
 ## 设计方案 
 作者首先是用训练ViTs的一些技巧去训练ResNet-50模型，并且取得了比最初ResNet-50模型更好的训练效果，并且以此作为后续实验的基准。 然后讲了接下来的实验包含哪些方面：
 * macro design 
