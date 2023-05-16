@@ -40,6 +40,9 @@ class ConvBNReLU(nn.Sequential):
         )
 
 class InvertedResidual(nn.Module):
+    """
+    倒残差结构
+    """
     def __init__(self, in_channel, out_channel, stride, expand_ratio):
         super(InvertedResidual, self).__init__()
         hidden_channel = in_channel * expand_ratio
