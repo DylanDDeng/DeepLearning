@@ -32,8 +32,15 @@ class ConvBNReLU(nn.Sequential):
     ConvBNReLU 模块
     """
     def __init__(self, in_channel, out_channel, kernel_size=3, stride=1, groups=1):
+        """
+        :param in_channel:
+        :param out_channel:
+        :param kernel_size: int default = 3
+        :param stride: int default = 1
+        :param groups: default=1 , standard conv, if !=1, then depthwise separable conv
+        """
         padding = (kernel_size - 1) // 2
-        super(ConvBNReLU, self).__int__(
+        super(ConvBNReLU, self).__init__(
             nn.Conv2d(in_channel, out_channel, kernel_size, stride, padding, groups=groups, bias=False),
             nn.BatchNorm2d(out_channel),
             nn.ReLU6(inplace=True)
