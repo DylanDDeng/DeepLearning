@@ -14,6 +14,10 @@ from utils import *
 from my_dataset import *
 from model_V2 import *
 
+"""
+Train MobileNet V2 
+"""
+
 def main(args):
     device = torch.device(args.device if torch.cuda.is_available() else 'cpu')
     print(args)
