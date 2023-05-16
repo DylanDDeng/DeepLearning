@@ -29,7 +29,7 @@ def _make_divisible(ch, divisor=8, min_ch=None) -> int:
 
 class ConvBNReLU(nn.Sequential):
     """
-    ConvBNReLU 模块
+    ConvBNReLU 模块, Conv + BatchNorm + ReLU6
     """
     def __init__(self, in_channel, out_channel, kernel_size=3, stride=1, groups=1):
         """

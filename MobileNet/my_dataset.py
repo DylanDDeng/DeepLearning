@@ -9,7 +9,7 @@ import torch
 from torch.utils.data import Dataset
 
 class MyDataset(Dataset):
-    """自定义数据集"""
+    """自定义数据集 MobileNet"""
 
     def __init__(self, images_path: list, images_class: list, transform=None):
         self.images_path = images_path
