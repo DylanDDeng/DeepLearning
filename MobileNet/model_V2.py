@@ -70,6 +70,9 @@ class InvertedResidual(nn.Module):
             return self.conv(x)
 
 class MobileNetV2(nn.Module):
+    """
+    MobileNet V2 搭建过程
+    """
     def __init__(self, num_classes=1000, alpha=1.0, round_nearest=8):
         super(MobileNetV2, self).__init__()
         block = InvertedResidual
