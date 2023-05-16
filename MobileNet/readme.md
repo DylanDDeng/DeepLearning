@@ -30,7 +30,29 @@ MobieleNet V1 中最大的亮点就是Depthwise Separable Convolution。在传�
 在原论文中，关于MobileNet V1 还提出了两个超参数，一个是 $\alpha$, 一个是$\beta$。$\alpha$是倍率因子，控制卷积核
 个数，$\beta$ 控制输入网络的图像尺寸，下图给出了使用不同这两个参数的网络的分类准确率，计算量以及参数。
 
-![img_3.png](img_3.png)
+![img_3.png](img_3.png) 
+
+## MobileNet V2 
+MobileNet V2模型中的亮点是Inverted Residual Block（倒残差结构）。与原ResNet中提出的残差结构对比如下：
+
+ResNet结构中的倒残差结构：1x1卷积降维 -> 3x3卷积 -> 1x1卷积升维 
+倒残差结构： 1x1卷积升维 -> 3x3卷积 -> 1x1卷积降维。
+
+这么做的原因是高维度信息通过ReLU激活函数后丢失的信息更少。倒残差结构使用的都是ReLU6激活函数，但最后一个1x1卷积层使用的
+是线性激活函数。 
+
+以下是MobileNet V2中倒残差结构的示例：
+
+![img_4.png](img_4.png) 
+
+并不是所有倒残差结构都有捷径分支连接，只有在stride=1，且输入特征矩阵和输出特征矩阵shape相同的情况下才有shortcut连接。
+
+![img_5.png](img_5.png) 
+
+下图是MobileNet V2的架构图，t代表的是扩展因子，（倒残差结构中第一个1x1卷积的扩展因子），C 代表输出特征矩阵的channel，
+n代表倒残差结构重复的次数，s代表步距，这里的步距只代表重复n次的第一层倒残差结构，后面都默认为1. 
+
+
 
 
 
