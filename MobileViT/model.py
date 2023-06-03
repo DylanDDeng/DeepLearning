@@ -7,4 +7,6 @@
 original code from apple:
 https://github.com/apple/ml-cvnets/blob/main/cvnets/models/classification/mobilevit.py
 """
+from typing import Optional, Tuple, Union, Dict
+import math
 import torch
