@@ -7,3 +7,4 @@
 original code from apple:
 https://github.com/apple/ml-cvnets/blob/main/cvnets/models/classification/mobilevit.py
 """
+import torch
