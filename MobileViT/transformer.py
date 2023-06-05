@@ -113,7 +113,7 @@ class TransformerEncoder(nn.Module):
     def __init__(
         self,
         embed_dim: int,
-        ffn_latent_dim: int,
+        ffn_latent_dim: int,  # MLP第一层全连接层的节点个数
         num_heads: Optional[int] = 8,
         attn_dropout: Optional[float] = 0.0,
         dropout: Optional[float] = 0.0,
@@ -136,7 +136,7 @@ class TransformerEncoder(nn.Module):
             attn_unit,
             nn.Dropout(p=dropout)
         )
-
+        # LayerNorm + MLP
         self.pre_norm_ffn = nn.Sequential(
             nn.LayerNorm(embed_dim),
             nn.Linear(in_features=embed_dim, out_features=ffn_latent_dim, bias=True),

@@ -228,7 +228,7 @@ class MobileViTBlock(nn.Module):
         self,
         in_channels: int,
         transformer_dim: int,
-        ffn_dim: int,
+        ffn_dim: int,  # MLP 模块第一个全连接层的节点
         n_transformer_blocks: int = 2,
         head_dim: int = 32,
         attn_dropout: float = 0.0,
